@@ -1,7 +1,8 @@
 # EES---UFSCAR---L-E
 EES - UFSCAR - Luara &amp; Eduardo
 
-:running: # _*Healthy Project*_ :running:
+
+# _*Healthy Project*_ :running:
 
 People everyday are becoming very busy accross their modern lives. Basically they need to manage too many activities in paralel combining both personal and professional aspects.
 One of the biggest consequence of it, is that their healthy, even living in a globally food scene where you can find any product being good or not to your healthy, even tought is becoming worst everyday.
