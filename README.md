@@ -30,5 +30,5 @@ This is the initial version 1.0
 * Eduardo G. Nascimento
 
 This initiative borned from a especialization course in Software Engineering performed at UFSCAR Sorocaba in the period from July-2018 till December-2019.
-As close coleagues and the empaty between both, it was able to have this job done together to accomplish the results of the classes for Web Development managed by teacher Kleber Carvalho.
+As close coleagues and the empaty between both, they were able to have this job done together to accomplish the results of the classes for Web Development managed by teacher Kleber Carvalho.
 
