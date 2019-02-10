@@ -11,22 +11,22 @@ Based on that, this project will enable you starting a healthy project anywhere 
 The project allows you controlling some basic and important data like person details, weight, pressure, ...in order to have a constantly follow-up on the quality of life from the group and allowing having better life actions based on this data that usually people don´t care too much about it.
 
 
-*Prerequisites:*
+## *Prerequisites:*
 
 What things you need to install the software and how to install them:
 
 
-*Execution:*
+## *Execution:*
 
 A step by step series of examples that tell you how to get a development env running
 
 
-*Versioning:*
+## *Versioning:*
 
 This is the initial version 1.0
 
 
-*Authors:*
+## *Authors:*
 * Luara C. Barbosa
 * Eduardo G. Nascimento
 
