@@ -38,39 +38,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-
-
-var client = redis.createClient();
-
-client.on('connect', function(){
-  console.log('Controller connected to Redis...');
-});
-
-var HealthRecord = {
-  blood_pressure: '120/80',
-  weight: '90Kg',
-  more: 'Nothing',
-  timestamp: Date.now()
-}
-
-client.hset('testdu', HealthRecord.timestamp, JSON.stringify(HealthRecord), function(err, res) {
-  if(err) throw err;
-
-  console.log(res);
-});
-
-client.hgetall('testdu', function(err, res) {
-  if(err) throw err;
-
-  for( var idx in res ) {
-    var obj = JSON.parse(res[idx]);
-    console.log(idx + ' ' + obj.blood_pressure);
-    //client.hdel("testdu", idx);
-  }
-});
-
-client.hset('testdu', 1550009340922, "444444", function(err, res) {
-  if(err) throw err;
-
-  console.log(res);
-});

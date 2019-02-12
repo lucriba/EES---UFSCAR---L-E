@@ -39,10 +39,15 @@ $(document).ready(function(){
 
 $(document).on("click", ".edit", function(e) {
 	var myId = $(this).data('id');
+	
 	var x = document.getElementsByClassName("recordtoedit");
 	x[0].innerHTML = myId;
 
 	document.getElementById("edittimestamp").value = myId;
+	document.getElementById("edit_weight").value = $(this).data('weight');
+	document.getElementById("edit_blood_pressure").value = $(this).data('blood_pressure');
+	document.getElementById("edit_more").value = $(this).data('more');
+
 });
 
 </script>
@@ -75,7 +80,7 @@ $(document).on("click", ".edit", function(e) {
                     </tr>
                 </thead>
                 <tbody>
-					<% for(var i=0; i<list.length;i++) {    %>
+					<% for( var i in list ) {    %>
 					<tr>
 						<td>
 							
@@ -89,7 +94,12 @@ $(document).on("click", ".edit", function(e) {
 						<td><%= JSON.parse(list[i]).blood_pressure %></td>
                         <td><%= JSON.parse(list[i]).more %></td>
                         <td>
-                            <a href="#editRecordModal" class="edit" data-toggle="modal" data-id="<%= JSON.parse(list[i]).timestamp %>"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+							<a href="#editRecordModal" class="edit" data-toggle="modal" 
+							data-id="<%= JSON.parse(list[i]).timestamp %>" 
+							data-weight="<%= JSON.parse(list[i]).weight %>" 
+							data-blood_pressure="<%= JSON.parse(list[i]).blood_pressure %>"  
+							data-more="<%= JSON.parse(list[i]).more %>">
+							<i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                             <a href="/delete/<%= JSON.parse(list[i]).timestamp %>"  class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                         </td>
 					</tr>
@@ -141,15 +151,15 @@ $(document).on("click", ".edit", function(e) {
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>Weight</label>
-							<input name="weight" type="text" class="form-control" required>
+							<input id="edit_weight" name="weight" type="text" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>Blood Pressure</label>
-							<input name="blood_pressure" type="text" class="form-control" required>
+							<input id="edit_blood_pressure" name="blood_pressure" type="text" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>More</label>
-							<textarea name="more" class="form-control" required></textarea>
+							<textarea id="edit_more" name="more" class="form-control" required></textarea>
 						</div>					
 					</div>
 					<div class="modal-footer">
@@ -163,16 +173,18 @@ $(document).on("click", ".edit", function(e) {
 	</div>
 	<!-- Delete Modal HTML -->
 	<div id="deleteRecordModal" class="modal fade">
-		<div class="modal-dialog">
+		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<form>
 					<div class="modal-header">						
-						<h4 class="modal-title">Delete Record</h4>
+						<h4 class="modal-title">Health Quick Chart</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">					
-						<p>Are you sure you want to delete these Records?</p>
-						<p class="text-warning"><small>This action cannot be undone.</small></p>
+						
+						<img src="https://www.excel-easy.com/examples/images/line-chart/line-chart.png" width=340px />
+
+
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">

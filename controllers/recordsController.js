@@ -10,7 +10,7 @@ var recordsController = {};
 
 // Show list of employees
 recordsController.list = function(req, res) {
-  client.zrevrange("records", 0, -1, function (err, list) {
+  client.hgetall("hrecords", function (err, list) {
     if (err) throw err;
     res.render("../views/index", {list: list});
   });
@@ -25,7 +25,7 @@ recordsController.save = function(req,res) {
     timestamp: Date.now()
   }
 
-  client.zadd('records', HealthRecord.timestamp, JSON.stringify(HealthRecord), function(err,res) {
+  client.hset('hrecords', HealthRecord.timestamp, JSON.stringify(HealthRecord), function(err,res) {
     if (err) throw err;
     console.log(res);
   });
@@ -38,7 +38,7 @@ recordsController.save = function(req,res) {
 recordsController.delete = function(req,res) {
 
   console.log('Deleting ' + req.params.id);
-  client.zremrangebyscore('records', req.params.id, req.params.id, function(err, res) {
+  client.hdel('hrecords', req.params.id, function(err, res) {
     if (err) throw err;
     console.log(res);
   });
@@ -58,13 +58,8 @@ recordsController.update = function(req,res) {
     more: req.body.more,
     timestamp: req.body.timestamp
   }
-
-  client.zremrangebyscore('records', req.body.timestamp, req.body.timestamp, function(err, res) {
-    if (err) throw err;
-    console.log(res);
-  });
-  
-  client.zadd('records', req.body.timestamp, JSON.stringify(HealthRecord), function(err,res) {
+ 
+  client.hset('hrecords', req.body.timestamp, JSON.stringify(HealthRecord), function(err,res) {
     if (err) throw err;
     console.log(res);
   });
