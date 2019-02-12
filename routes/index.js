@@ -20,5 +20,11 @@ router.get('/delete/:id', function(req, res) {
   records.delete(req, res);
 });
 
+// Update record
+router.post('/update', function(req, res) {
+  console.log('Routing post /update');
+  records.update(req, res);
+});
+
 
 module.exports = router;
