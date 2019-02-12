@@ -1,6 +1,4 @@
 var redis = require('redis');
-var bodyParser = require('body-parser');
-var Record = require("../models/Record");
 
 var client = redis.createClient();
 
@@ -14,26 +12,38 @@ var recordsController = {};
 recordsController.list = function(req, res) {
   client.zrevrange("records", 0, -1, function (err, list) {
     if (err) throw err;
-    res.render("../views/index", {list: list})
-    console.log("Controller Blood Pressure:", JSON.parse(list[0]).blood_pressure);
-    console.log('Controller Size: ' + list.length)
+    res.render("../views/index", {list: list});
   });
 };
 
 // Adds a new record
 recordsController.save = function(req,res) {
   var HealthRecord = {
-    blood_pressure: "120/88",
-    weight: "80Kg",
+    blood_pressure: req.body.blood_pressure,
+    weight: req.body.weight,
+    more: req.body.more,
     timestamp: Date.now()
   }
 
-  console.log('Body: ' + req.body);
-
-  client.zadd('records', Date.now(), JSON.stringify(HealthRecord), function(err,res) {
+  client.zadd('records', HealthRecord.timestamp, JSON.stringify(HealthRecord), function(err,res) {
     if (err) throw err;
   
     console.log(res);
+  });
+
+  res.redirect('/');
+
+}
+
+// Removes an existing record
+recordsController.delete = function(req,res) {
+  
+  console.log('Deleting ' + req.params.id);
+  client.zremrangebyscore('records', req.params.id, req.params.id, function(err, res) {
+    if (err) throw err;
+
+    console.log(res);
+
   });
 
   res.redirect('/');

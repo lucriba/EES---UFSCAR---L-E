@@ -38,35 +38,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-
-// Create Redis Client
-let client = redis.createClient();
-
-client.on('connect', function(){
-  console.log('Connected to Redis...');
-});
-
-
-
-var jsonstr = "{ '1549932156948': 'asdfasdf' } "; //,'1549932185410': '{\"blood_pressure\":\"120/80\",\"weight\":\"80Kg\"}''1549932206400': '{\"blood_pressure\":\"120/80\",\"weight\":\"80Kg\"}'";
-
-var json2 = '{name: "John", age: 31, city: "New York"}';
-var myJSON = '[{"name":"John", "age":31, "city":"New York"},{"name":"Billy", "age":31, "city":"New York"}]';
-
-console.log(myJSON);
-var parsed = JSON.parse(myJSON);
-console.log(parsed);
-console.log(parsed[1].name + 'Size: ' + parsed.length);
-
-var HealthRecord = {
-  blood_pressure: "120/80",
-  weight: "80Kg",
-  timestamp: Date.now()
-}
-
-client.zrevrange("records", 0, -1, function (err, list) {
-  if (err) throw err;
-  console.log("Blood Pressure:", JSON.parse(list[0]).blood_pressure);
-  console.log('Size: ' + list.length)
-});
-

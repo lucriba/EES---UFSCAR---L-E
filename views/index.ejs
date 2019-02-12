@@ -84,10 +84,10 @@ $(document).ready(function(){
 						</td>
                         <td><%= JSON.parse(list[i]).weight %></td>
 						<td><%= JSON.parse(list[i]).blood_pressure %></td>
-                        <td></td>
+                        <td><%= JSON.parse(list[i]).more %></td>
                         <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            <a href="/edit" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <a href="/delete/<%= JSON.parse(list[i]).timestamp %>"  class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                         </td>
 					</tr>
 					<% } %>
@@ -107,7 +107,7 @@ $(document).ready(function(){
             </div>
         </div>
     </div>
-	<!-- Edit Modal HTML -->
+	<!-- Add Modal HTML -->
 	<div id="addEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
