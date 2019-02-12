@@ -63,92 +63,34 @@ $(document).ready(function(){
 						</th>
                         <th>Date/Time</th>
                         <th>Weight</th>
-			<th>Blood Pressure</th>
-                        <th>More</th>
+						<th>Blood Pressure </th>
+                        <th>More </th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+					<% for(var i=0; i<list.length;i++) {    %>
+					<tr>
 						<td>
 							<span class="custom-checkbox">
 								<input type="checkbox" id="checkbox1" name="options[]" value="1">
 								<label for="checkbox1"></label>
 							</span>
 						</td>
-                        <td>12/01/2019 10:05</td>
-                        <td>70Kg</td>
-			<td>120/84</td>
-                        <td></td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
 						<td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox2" name="options[]" value="1">
-								<label for="checkbox2"></label>
-							</span>
+							<script> var date = new Date(<%= JSON.parse(list[i]).timestamp  %>); 
+								document.write(date.toLocaleString());
+							</script>
 						</td>
-                        <td>10/01/2019 13:34</td>
-                        <td>71Kg</td>
-			<td>120/88</td>
+                        <td><%= JSON.parse(list[i]).weight %></td>
+						<td><%= JSON.parse(list[i]).blood_pressure %></td>
                         <td></td>
                         <td>
                             <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                         </td>
-                    </tr>
-					<tr>
-						<td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox3" name="options[]" value="1">
-								<label for="checkbox3"></label>
-							</span>
-						</td>
-                        <td>09/01/2019 20:35</td>
-                        <td>71Kg</td>
-			<td>130/91</td>
-                        <td></td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-						<td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox4" name="options[]" value="1">
-								<label for="checkbox4"></label>
-							</span>
-						</td>
-                        <td>08/01/2019 15:45</td>
-                        <td>70Kg</td>
-			<td>129/70</td>
-                        <td></td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                        </td>
-                    </tr>					
-					<tr>
-						<td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox5" name="options[]" value="1">
-								<label for="checkbox5"></label>
-							</span>
-						</td>
-                        <td>07/01/2019 10:04</td>
-                        <td>69Kg</td>
-			<td>120/84</td>
-                        <td></td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                        </td>
-                    </tr> 
+					</tr>
+					<% } %>
                 </tbody>
             </table>
 			<div class="clearfix">
@@ -169,7 +111,7 @@ $(document).ready(function(){
 	<div id="addEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form>
+				<form action="/save" method="post">
 					<div class="modal-header">						
 						<h4 class="modal-title">Add Record</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -177,15 +119,15 @@ $(document).ready(function(){
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>Weight</label>
-							<input type="text" class="form-control" required>
+							<input name="weight" type="text" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>Blood Pressure</label>
-							<input type="text" class="form-control" required>
+							<input name="blood_pressure"  type="text" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>More</label>
-							<textarea class="form-control" required></textarea>
+							<textarea name="more" class="form-control" required></textarea>
 						</div>				
 					</div>
 					<div class="modal-footer">
