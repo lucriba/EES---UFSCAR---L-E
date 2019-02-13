@@ -13,9 +13,35 @@ The project allows you controlling some basic and important data like person det
 
 ## *Prerequisites:*
 
-What things you need to install the software and how to install them:
+### REDIS DATABASE
+The app connects to a REDIS database. In terms of architecture it might be an overkill but we decided to use it for learning purposes. REDIS is a key-value database that has become very popular. It is in the 8th position among the most popular databases according to the website https://db-engines.com/en/ranking and is used by many popular websites such as Twitter, GitHub, Pinterest and Snapchat.
 
+In order to install the app, you need first to have REDIS database installed. You have a couple of options here. You can either install the database in the machine or run it in a docker container. The following commands cover the second option which I consider easier and faster. They should work in most of Linux Debian distros, ex. Ubuntu.
 
+1. Install docker in case you don't have it already installed.
+```sh
+sudo apt-get install docker.io
+```
+
+2. Test if everything is OK with the following command. You should see a message starting by Hello from Docker!
+```sh
+docker run hello-world
+```
+
+3. To pull a docker REDIS file and run it on local machine with default port use the command below.
+```sh
+docker run --name some-redis -d redis
+```
+
+4. At this point, you should be able to see the recently downloaded image with the command below.
+```sh
+docker ps
+```
+
+5. Finally, run it passing the parameters as follow.
+```sh
+docker run -p 6379:6379 redis
+```
 ## *Execution:*
 
 A step by step series of examples that tell you how to get a development env running
