@@ -65,9 +65,11 @@ This is the main page of the application. Here you can find for specific person 
 
 This is the section of the page allows you to updated record lines one by one clicking in corresponding check box on left side or directly having one or many records deleted at the same time by clicking the same check box.
 
-  4.1 Edit - it is possible, for existing records already saved, in case of any error or duplication, having it deleted through this  option;
+  ##### 4.1 Edit
+It is possible, for existing records already saved, in case of any error or duplication, having it deleted through this  option;
   
-  4.2 Delete - it is possible, for existing records already saved, in case of any error or duplication, having it deleted through this option.
+  ##### 4.2 Delete
+It is possible, for existing records already saved, in case of any error or duplication, having it deleted through this option.
 
 
 
