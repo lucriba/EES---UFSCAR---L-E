@@ -43,9 +43,30 @@ docker ps
 ```sh
 docker run -p 6379:6379 redis
 ```
+
 ## *Execution:*
 
-A step by step series of examples that tell you how to get a development env running
+This is a step-by-step instruction on how using and execution the webpage.
+
+#### 1. Access http://eduardogarcia.eng.br/#
+
+This is the main page of the application. Here you can find for specific person its own timeline with corresponding weight, blood pressure and additional details and based on that is possible to see the progress accross the date and time period.
+
+
+#### 2. Adding a new record
+
+
+
+#### 3. Deleting an existing record
+
+
+
+#### 4. All line records listed in the page have two main options:
+  4.1 Edit - it is possible, for existing records already saved, in case of any error or duplication, having it deleted through this  option;
+  4.2 Delete - it is possible, for existing records already saved, in case of any error or duplication, having it deleted through this option.
+This part of the page allows you to updated record lines one by one clicking in corresponding check box on left side or directly having one or many records deleted at the same time by clicking the same check box.
+
+
 
 
 ## *Versioning:*
