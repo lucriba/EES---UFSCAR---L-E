@@ -78,8 +78,6 @@ It is possible, for existing records already saved, in case of any error or dupl
   ##### 3.2 Delete
 It is possible, for existing records already saved, in case of any error or duplication, having it deleted through this option.
 
-![image](https://user-images.githubusercontent.com/47474803/52752992-14377480-2fdc-11e9-903e-b1c698aec30a.png)
-
 
 #### 4. Chart - Pull out chart Results x Timeline
 
