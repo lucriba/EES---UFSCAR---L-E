@@ -17,6 +17,7 @@ The project allows you controlling the most basic and important data like weight
 * *Redis Database*
 * *Visual Studio Code*
 * *GIT*
+* *Docker*
 
 
 ## *Prerequisites:*
