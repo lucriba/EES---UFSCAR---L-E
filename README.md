@@ -11,6 +11,14 @@ Based on that, this project will enable you starting a healthy project anywhere 
 The project allows you controlling the most basic and important data like weight and blood pressure. Like that you can have a constantly follow-up on the quality of life beginning from yourself and a better life plan and actions based on that.
 
 
+## *Used Technologies and Plataforms:*
+
+* *Node.Js*
+* *Redis Database*
+* *Visual Studio Code*
+* *GIT*
+
+
 ## *Prerequisites:*
 
 ### REDIS DATABASE
