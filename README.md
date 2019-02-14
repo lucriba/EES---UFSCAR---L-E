@@ -62,7 +62,7 @@ Access link http://localhost:3030
 
 This is a step-by-step instruction on how start using and execution the webpage.
 
-#### 1. Access webpage
+#### 1. Manage webpage
 
 This is the main page of the application. Here you can find for specific person its own timeline with corresponding weight, blood pressure and additional details and based on that is possible to see the progress accross the date and time period. There are some main functionalities like Adding New records, Editing and Deleting records and finally generating a Chart based on all the records.
 
