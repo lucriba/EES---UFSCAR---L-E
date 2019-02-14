@@ -1,6 +1,8 @@
 # EES - UFSCAR - Plataformas Web
 Grupo: Luara &amp; Eduardo
 
+![GitHub Logo](/screenshots/logo.png)
+
 
 # _*Healthy Project*_ :running:
 
