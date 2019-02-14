@@ -33,7 +33,7 @@ Mandatory having Node.js installed to run this application.
 
 
 #### REDIS DATABASE
-<img src="http://3.bp.blogspot.com/-qFzuZimiwv8/Wj2i2upNTzI/AAAAAAAA-s4/zUmkf_BXhjsgcyynRi-bSBC8WW0Cn4OgACK4BGAYYCw/s1600/89e5782a-76ea-4b94-a561-39e331c281a5-redis.png" width="48" />
+<img src="http://3.bp.blogspot.com/-qFzuZimiwv8/Wj2i2upNTzI/AAAAAAAA-s4/zUmkf_BXhjsgcyynRi-bSBC8WW0Cn4OgACK4BGAYYCw/s1600/89e5782a-76ea-4b94-a561-39e331c281a5-redis.png" width="100" />
 The app connects to a REDIS database. In terms of architecture it might be an overkill but we decided to use it for learning purposes. REDIS is a key-value database that has become very popular. It is in the 8th position among the most popular databases according to the website https://db-engines.com/en/ranking and is used by many popular websites such as Twitter, GitHub, Pinterest and Snapchat.
 
 In order to install the app, you need first to have REDIS database installed. You have a couple of options here. You can either install the database in the machine or run it in a docker container. The following commands cover the second option which I consider easier and faster. They should work in most of Linux Debian distros, ex. Ubuntu.
