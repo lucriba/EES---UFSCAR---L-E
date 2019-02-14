@@ -52,12 +52,17 @@ This is a step-by-step instruction on how using and execution the webpage.
 
 This is the main page of the application. Here you can find for specific person its own timeline with corresponding weight, blood pressure and additional details and based on that is possible to see the progress accross the date and time period.
 
+![image](https://raw.githubusercontent.com/lucriba/EES---UFSCAR---L-E/master/screenshots/list.png)
+
 ![image](https://user-images.githubusercontent.com/47474803/52752746-151bd680-2fdb-11e9-97dd-9cad20ace9f0.png)
 
 
 #### 2. Adding a new record
 
 ![image](https://user-images.githubusercontent.com/47474803/52753062-67a9c280-2fdc-11e9-9750-315e71e1d486.png)
+
+
+![image](https://raw.githubusercontent.com/lucriba/EES---UFSCAR---L-E/master/screenshots/add.png)
 
 
 ![image](https://user-images.githubusercontent.com/47474803/52753084-80b27380-2fdc-11e9-9617-148491b5e84a.png)
@@ -75,19 +80,29 @@ This is the main page of the application. Here you can find for specific person 
 
 
 
+#### 4. Chart - Pull out chart Results x Timeline
+
+![image](https://raw.githubusercontent.com/lucriba/EES---UFSCAR---L-E/master/screenshots/chart.png)
 
 
-#### 4. All line records listed in the page have two main options:
+
+
+#### 5. All line records listed in the page have two main options:
 
 This is the section of the page allows you to updated record lines one by one clicking in corresponding check box on left side or directly having one or many records deleted at the same time by clicking the same check box.
 
-  ##### 4.1 Edit
+  ##### 5.1 Edit
 It is possible, for existing records already saved, in case of any error or duplication, having it deleted through this  option;
 
 ![image](https://user-images.githubusercontent.com/47474803/52752950-e05c4f00-2fdb-11e9-9cc8-7e79e94b14fb.png)
 
 
-  ##### 4.2 Delete
+
+![image](https://raw.githubusercontent.com/lucriba/EES---UFSCAR---L-E/master/screenshots/edit.png)
+
+
+
+  ##### 5.2 Delete
 It is possible, for existing records already saved, in case of any error or duplication, having it deleted through this option.
 
 ![image](https://user-images.githubusercontent.com/47474803/52752992-14377480-2fdc-11e9-903e-b1c698aec30a.png)
