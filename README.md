@@ -48,9 +48,10 @@ docker run -p 6379:6379 redis
 
 This is a step-by-step instruction on how using and execution the webpage.
 
-#### 1. Access http://eduardogarcia.eng.br/#
+#### 1. Access http://eduardogarcia.eng.br/
 
 This is the main page of the application. Here you can find for specific person its own timeline with corresponding weight, blood pressure and additional details and based on that is possible to see the progress accross the date and time period.
+
 
 
 #### 2. Adding a new record
