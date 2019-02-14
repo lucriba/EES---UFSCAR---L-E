@@ -133,12 +133,20 @@ This section of the page allows you to pull out some outstanding chart that show
 
 ![image](https://raw.githubusercontent.com/lucriba/EES---UFSCAR---L-E/master/screenshots/chart.png)
 
-
-
 ## *Versioning:*
 
 This is the initial version 1.0
 
+## *License:*
+[MIT](https://tldrlegal.com/license/mit-license)
+
+## TODO list
+
+- [x] Weight chart
+- [ ] Blood pressure char
+- [ ] User Login
+- [ ] Admin access
+- [ ] Integration with Samsung and Apple gadgets
 
 ## *Authors:*
 * Luara C. Barbosa
