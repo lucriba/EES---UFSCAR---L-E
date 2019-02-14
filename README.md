@@ -48,63 +48,44 @@ docker run -p 6379:6379 redis
 
 This is a step-by-step instruction on how using and execution the webpage.
 
-#### 1. Access http://eduardogarcia.eng.br/
+#### 1. Access webpage
 
 This is the main page of the application. Here you can find for specific person its own timeline with corresponding weight, blood pressure and additional details and based on that is possible to see the progress accross the date and time period. There are some main functionalities like Adding New records, Editing and Deleting records and finally generating a Chart based on all the records.
 
 ![image](https://raw.githubusercontent.com/lucriba/EES---UFSCAR---L-E/master/screenshots/list.png)
 
 
-#### 2. Adding a new record
+#### 2. Add New Record
 
-![image](https://user-images.githubusercontent.com/47474803/52753062-67a9c280-2fdc-11e9-9750-315e71e1d486.png)
-
+This is the functionality to create/add new entry to the page. Basically you need to fill up the following details:
+*Weight*
+*Blood Pressure*
+*More*
+Date and Time information will be automatically populated by the page once a record is submitted/saved.
 
 ![image](https://raw.githubusercontent.com/lucriba/EES---UFSCAR---L-E/master/screenshots/add.png)
 
 
-![image](https://user-images.githubusercontent.com/47474803/52753084-80b27380-2fdc-11e9-9617-148491b5e84a.png)
-
-
-![image](https://user-images.githubusercontent.com/47474803/52753144-b5262f80-2fdc-11e9-95fe-2173d1d08896.png)
-
-
-#### 3. Deleting an existing record
-
-![image](https://user-images.githubusercontent.com/47474803/52753314-44cbde00-2fdd-11e9-976b-c4d153bcf13b.png)
-
-
-![image](https://user-images.githubusercontent.com/47474803/52753359-6dec6e80-2fdd-11e9-97fa-469cec46f6f9.png)
-
-
-
-#### 4. Chart - Pull out chart Results x Timeline
-
-![image](https://raw.githubusercontent.com/lucriba/EES---UFSCAR---L-E/master/screenshots/chart.png)
-
-
-
-
-#### 5. All line records listed in the page have two main options:
+#### 3. Edit and Delete 
 
 This is the section of the page allows you to updated record lines one by one clicking in corresponding check box on left side or directly having one or many records deleted at the same time by clicking the same check box.
 
-  ##### 5.1 Edit
+  ##### 3.1 Edit
 It is possible, for existing records already saved, in case of any error or duplication, having it deleted through this  option;
-
-![image](https://user-images.githubusercontent.com/47474803/52752950-e05c4f00-2fdb-11e9-9cc8-7e79e94b14fb.png)
-
-
 
 ![image](https://raw.githubusercontent.com/lucriba/EES---UFSCAR---L-E/master/screenshots/edit.png)
 
-
-
-  ##### 5.2 Delete
+  ##### 3.2 Delete
 It is possible, for existing records already saved, in case of any error or duplication, having it deleted through this option.
 
 ![image](https://user-images.githubusercontent.com/47474803/52752992-14377480-2fdc-11e9-903e-b1c698aec30a.png)
 
+
+#### 4. Chart - Pull out chart Results x Timeline
+
+This section of the page allows you to pull out some outstanding chart that shows the progress accross the timeline showing both Weight and Blood Pressure. This is a great option to perform comparison and see the evolution of the project not only for the good but also to the bad aspect. Enjoy it!
+
+![image](https://raw.githubusercontent.com/lucriba/EES---UFSCAR---L-E/master/screenshots/chart.png)
 
 
 
