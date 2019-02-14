@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	// Activate tooltip
@@ -128,7 +129,7 @@ $(document).on("click", ".edit", function(e) {
 						</div>
 						<div class="form-group">
 							<label>More</label>
-							<textarea name="more" class="form-control" required></textarea>
+							<textarea name="more" class="form-control"></textarea>
 						</div>				
 					</div>
 					<div class="modal-footer">
@@ -159,7 +160,7 @@ $(document).on("click", ".edit", function(e) {
 						</div>
 						<div class="form-group">
 							<label>More</label>
-							<textarea id="edit_more" name="more" class="form-control" required></textarea>
+							<textarea id="edit_more" name="more" class="form-control"></textarea>
 						</div>					
 					</div>
 					<div class="modal-footer">
@@ -173,24 +174,75 @@ $(document).on("click", ".edit", function(e) {
 	</div>
 	<!-- Delete Modal HTML -->
 	<div id="deleteRecordModal" class="modal fade">
-		<div class="modal-dialog modal-lg">
+		<div class="modal-chart">
 			<div class="modal-content">
-				<form>
 					<div class="modal-header">						
 						<h4 class="modal-title">Health Quick Chart</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
-					<div class="modal-body">					
-						
-						<img src="https://www.excel-easy.com/examples/images/line-chart/line-chart.png" width=340px />
+					<div class="modal-body">
+					<canvas width="700" height="500" id="myChart"></canvas>					
+					<script>
+						function sortFunction(a, b) {
+							if (a[0] === b[0]) {
+								return 0;
+							}
+							else {
+								return (a[0] < b[0]) ? -1 : 1;
+							}
+						}
 
+						function getCol(matrix, col){
+							var column = [];
+							for(var i=0; i<matrix.length; i++){
+								column.push(matrix[i][col]);
+							}
+							return column;
+						}
 
+						var ctx = document.getElementById('myChart').getContext('2d');
+						var data = []
+						var index=0;
+						<% for( var i in list ) {    %>
+							data[index++] = [<%= JSON.parse(list[i]).timestamp %>, new Date(<%= JSON.parse(list[i]).timestamp %>).toLocaleString(), <%= JSON.parse(list[i]).weight %>];
+						<% } %>
+
+						data = data.sort(function(a,b) {
+							return a[0]-b[0];
+						});
+
+						dates = getCol(data, 1);
+						weights = getCol(data, 2);						
+
+						var myChart = new Chart(ctx, {
+						type: 'line',
+						data: {
+							labels: dates,
+							datasets: [{
+							label: 'Weight',
+							data: weights,
+							lineTension: 0,
+							backgroundColor: 'lightblue',
+							borderColor: 'royalblue'
+							}]
+						},
+						options: {
+							responsive: false,
+							scales : {
+            					yAxes : [{
+                					ticks : {
+                    					beginAtZero : true
+                					}	   
+            					}]
+        					}
+            			}
+						});
+					</script>
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-danger" value="Delete">
 					</div>
-				</form>
+				
 			</div>
 		</div>
 	</div>

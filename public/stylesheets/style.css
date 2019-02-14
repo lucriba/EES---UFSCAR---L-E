@@ -4,6 +4,13 @@ body {
   font-family: 'Varela Round', sans-serif;
   font-size: 13px;
 }
+
+body .modal-chart {
+  width: 800px;
+  height: 600px;
+  margin: auto;
+}
+
 .table-wrapper {
       background: #fff;
       padding: 20px 25px;
