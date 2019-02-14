@@ -7,8 +7,8 @@ EES - UFSCAR - Luara &amp; Eduardo
 People everyday are becoming very busy accross their modern lives. Basically they need to manage too many activities in paralel combining both personal and professional aspects.
 One of the biggest consequence of it, is that their healthy, even living in a globally food scene where you can find any product being good or not to your healthy, even tought is becoming worst everyday.
 People get sick all the time and some constraint diseases are daily becoming part of our lives.
-Based on that, this project will enable you starting a healthy project anywhere it interests you. You can use at you work, your home, or within any group you want to start having a healthy attitude;
-The project allows you controlling some basic and important data like person details, weight, pressure, ...in order to have a constantly follow-up on the quality of life from the group and allowing having better life actions based on this data that usually people don´t care too much about it.
+Based on that, this project will enable you starting a healthy project anywhere it interests you. You can use at you work, your home, or within any group you want to start having a healthy attitude.
+The project allows you controlling the most basic and important data like weight and blood pressure. Like that you can have a constantly follow-up on the quality of life beginning from yourself and a better life plan and actions based on that.
 
 
 ## *Prerequisites:*
@@ -44,9 +44,23 @@ docker ps
 docker run -p 6379:6379 redis
 ```
 
+## *Instalation:*
+
+For having all functionality fully working you need to follow the basic steps below:
+
+#### 1. Install the coding
+Make sure you have installed and downloaded all files cointaned in this project.
+
+#### 2. Execute
+Perform execution of command *nodemon*.
+
+#### 3. Access Webpage
+Access link http://localhost:3030
+
+
 ## *Execution:*
 
-This is a step-by-step instruction on how using and execution the webpage.
+This is a step-by-step instruction on how start using and execution the webpage.
 
 #### 1. Access webpage
 
