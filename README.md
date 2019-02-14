@@ -68,6 +68,13 @@ This is the main page of the application. Here you can find for specific person 
 
 #### 3. Deleting an existing record
 
+![image](https://user-images.githubusercontent.com/47474803/52753314-44cbde00-2fdd-11e9-976b-c4d153bcf13b.png)
+
+
+![image](https://user-images.githubusercontent.com/47474803/52753359-6dec6e80-2fdd-11e9-97fa-469cec46f6f9.png)
+
+
+
 
 
 #### 4. All line records listed in the page have two main options:
