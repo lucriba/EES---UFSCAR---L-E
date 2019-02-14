@@ -63,10 +63,25 @@ docker run -p 6379:6379 redis
 
 ## *Instalation:*
 
-For having all functionality fully working you need to follow the basic steps below:
+For having all functionality fully working you need to follow the basic steps below. Make sure you have Node JS installed in your computer. If you are running on Linux Debian based distro, execute the command below.
+
+```sh
+sudo apt install nodejs
+```
+
+To confirm you have a successful installation, type
+
+```sh
+node -v
+npm -v
+```
 
 #### 1. Install the coding
-Make sure you have installed and downloaded all files cointaned in this project.
+Make sure you have installed and downloaded all files cointaned in this project. In order to do that execute the commands below.
+
+```sh
+git clone https://github.com/lucriba/EES---UFSCAR---L-E.git
+```
 
 #### 2. Execute
 Perform execution of command *nodemon*.
