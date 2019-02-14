@@ -50,11 +50,9 @@ This is a step-by-step instruction on how using and execution the webpage.
 
 #### 1. Access http://eduardogarcia.eng.br/
 
-This is the main page of the application. Here you can find for specific person its own timeline with corresponding weight, blood pressure and additional details and based on that is possible to see the progress accross the date and time period.
+This is the main page of the application. Here you can find for specific person its own timeline with corresponding weight, blood pressure and additional details and based on that is possible to see the progress accross the date and time period. There are some main functionalities like Adding New records, Editing and Deleting records and finally generating a Chart based on all the records.
 
 ![image](https://raw.githubusercontent.com/lucriba/EES---UFSCAR---L-E/master/screenshots/list.png)
-
-![image](https://user-images.githubusercontent.com/47474803/52752746-151bd680-2fdb-11e9-97dd-9cad20ace9f0.png)
 
 
 #### 2. Adding a new record
