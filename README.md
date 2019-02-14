@@ -1,10 +1,10 @@
 # EES - UFSCAR - Plataformas Web
 Grupo: Luara &amp; Eduardo
 
-![GitHub Logo](/screenshots/logo.png)
 
 
-# _*Healthy Project*_ :running:
+
+![GitHub Logo](/screenshots/logo.png) :running:
 
 People everyday are becoming very busy accross their modern lives. Basically they need to manage too many activities in paralel combining both personal and professional aspects.
 One of the biggest consequences of it, is that their health, even living in a globally food scene where you can find any product being good or not to your health, even thought is becoming worst everyday.
