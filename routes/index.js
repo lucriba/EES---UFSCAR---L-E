@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 // Save record
 router.post('/save', function(req, res) {
   console.log('Routing post /save');
-  records.save(req, res);
+  records.save(req, res, true);
 });
 
 // Delete record
@@ -24,6 +24,18 @@ router.get('/delete/:id', function(req, res) {
 router.post('/update', function(req, res) {
   console.log('Routing post /update');
   records.update(req, res);
+});
+
+//################################ API SECTION DESIGNED FOR MOBILE APP CLASSES #############################
+router.get('/api/record', function(req, res, next) {
+  console.log('Routing /api/record');
+  records.api_list(req, res);
+});
+
+// Save record
+router.post('/api/record', function(req, res) {
+  console.log('Routing post /api/save');
+  records.save(req, res, false);
 });
 
 

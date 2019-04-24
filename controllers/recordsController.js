@@ -16,8 +16,46 @@ recordsController.list = function(req, res) {
   });
 };
 
+// Show json list of employees
+recordsController.list = function(req, res) {
+  client.hgetall("hrecords", function (err, list) {
+    if (err) throw err;
+    res.render("../views/index", {list: list});
+  });
+};
+
+// Show json list of employees
+recordsController.api_list = function(req, res) {
+  client.hgetall("hrecords", function (err, list) {
+    if (err) throw err;
+
+    console.log("Treating records");
+    jsonObj = []
+
+
+    for( var item in list)  {
+      var jparsed = JSON.parse(list[item]);
+      jsontosend = {}
+
+      var date = new Date(jparsed["timestamp"]);
+
+      // Will display time in 10:30:23 format
+      var formattedTime = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' ' +
+                          date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+      jsontosend["timestamp"] = formattedTime;
+      jsontosend["blood_pressure"] = jparsed["blood_pressure"];
+      jsontosend["weight"] = jparsed["weight"];
+      jsontosend["more"] = jparsed["more"];
+      jsonObj.push(jsontosend);
+    }
+    jsonwithquotes = JSON.stringify(jsonObj);
+    console.log(jsonwithquotes);
+    res.send(jsonwithquotes);
+  });
+};
+
 // Adds a new record
-recordsController.save = function(req,res) {
+recordsController.save = function(req,res, redirect) {
   var HealthRecord = {
     blood_pressure: req.body.blood_pressure,
     weight: req.body.weight,
@@ -30,7 +68,11 @@ recordsController.save = function(req,res) {
     console.log(res);
   });
 
-  res.redirect('/');
+  if(redirect) {
+    res.redirect('/');
+  }
+
+  res.send('{"timestamp":"23/4/2019 23:48:0","blood_pressure":"1","weight":"1","more":"1"}');
 
 }
 
