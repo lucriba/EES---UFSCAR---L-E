@@ -42,7 +42,7 @@ recordsController.api_list = function(req, res) {
       // Will display time in 10:30:23 format
       var formattedTime = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' ' +
                           date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
-      jsontosend["timestamp"] = formattedTime;
+      jsontosend["timestamp"] = jparsed["timestamp"];
       jsontosend["blood_pressure"] = jparsed["blood_pressure"];
       jsontosend["weight"] = jparsed["weight"];
       jsontosend["more"] = jparsed["more"];
@@ -63,6 +63,8 @@ recordsController.save = function(req,res, redirect) {
     timestamp: Date.now()
   }
 
+  console.log("Saving new data")
+
   client.hset('hrecords', HealthRecord.timestamp, JSON.stringify(HealthRecord), function(err,res) {
     if (err) throw err;
     console.log(res);
@@ -72,7 +74,7 @@ recordsController.save = function(req,res, redirect) {
     res.redirect('/');
   }
 
-  res.send('{"timestamp":"23/4/2019 23:48:0","blood_pressure":"1","weight":"1","more":"1"}');
+  res.send(JSON.stringify(HealthRecord));
 
 }
 
@@ -89,10 +91,25 @@ recordsController.delete = function(req,res) {
 
 }
 
+// Removes an existing record
+recordsController.api_delete = function(req,res) {
+
+  console.log('Deleting ' + req.body);
+  client.hdel('hrecords', req.body, function(err, res) {
+    if (err) throw err;
+    console.log(res);
+  });
+
+}
+
 // Edit an existing record
-recordsController.update = function(req,res) {
+recordsController.update = function(req,res, redirect) {
 
   console.log('Updating ' + req.body.timestamp);
+
+  if(req.body.timestamp == "") {
+    req.body.timestamp = Date.now()
+  }
 
   var HealthRecord = {
     blood_pressure: req.body.blood_pressure,
@@ -100,13 +117,19 @@ recordsController.update = function(req,res) {
     more: req.body.more,
     timestamp: req.body.timestamp
   }
+
+  if(HealthRecord.timestamp )
  
   client.hset('hrecords', req.body.timestamp, JSON.stringify(HealthRecord), function(err,res) {
     if (err) throw err;
     console.log(res);
   });
 
-  res.redirect('/');
+  if(redirect) {
+    res.redirect('/');
+  }
+
+  res.send(JSON.stringify(HealthRecord));
 
 }
 
