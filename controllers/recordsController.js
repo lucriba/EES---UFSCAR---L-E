@@ -94,11 +94,15 @@ recordsController.delete = function(req,res) {
 // Removes an existing record
 recordsController.api_delete = function(req,res) {
 
-  console.log('Deleting ' + req.body);
-  client.hdel('hrecords', req.body, function(err, res) {
+  console.log('Deleting ' + req.body.timestamp);
+
+  client.hdel('hrecords', req.body.timestamp, function(err, res) {
     if (err) throw err;
     console.log(res);
   });
+
+  console.log(req.body)
+  res.send(req.body);
 
 }
 
